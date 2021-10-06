@@ -1,0 +1,58 @@
+[core]
+	commitGraph = true
+	editor = code --wait
+
+[diff]
+	algorithm = patience
+
+[alias]
+	br           = branch
+	ch           = log --cherry --pretty=format:\"%C(auto)%h (%ar) %an: %s\" --date-order --reverse
+	ci           = commit
+	amd          = commit --amend --no-edit
+	co           = checkout
+	n            = checkout -b
+	df           = diff
+	g            = grep -I
+	l            = log
+	lg           = log -p
+	loq          = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	st           = status
+	sta          = stash
+	stau         = stash --include-untracked
+	stal         = stash list
+	find         = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+	continue     = rebase --continue
+	skip         = rebase --skip
+	abort        = rebase --abort
+	pop          = stash pop
+	reset        = reset HEAD
+	rename       = branch -m
+	fetch-master = fetch origin master:master
+	undo-last    = reset --soft HEAD~1
+	u            = push -u origin HEAD
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local   = yellow
+	remote  = green
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old  = red
+	new  = green
+
+[color "status"]
+	added     = yellow
+	changed   = green
+	untracked = cyan
+
+[rerere]
+	enabled = 1
+
+[gc]
+	writeCommitGraph = true
