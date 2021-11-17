@@ -56,3 +56,7 @@
 
 [gc]
 	writeCommitGraph = true
+
+[user]
+	name = Tatiana Uspenskaia
+	email = tatianau@users.noreply.github.com
